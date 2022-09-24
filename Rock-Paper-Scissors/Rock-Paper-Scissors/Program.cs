@@ -65,7 +65,7 @@ namespace Rock___Paper___Scissors
                 }
                 playerMove = Console.ReadLine();
             }
-            
+
         }
     }
 }
