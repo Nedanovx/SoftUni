@@ -20,15 +20,13 @@ namespace _06._Balanced_Brackets
                 }
                 if (input == ")")
                 {
-                    openingBracket++;
-                    closedBracket--;
+                    closedBracket++;
                     latest = input;
 
                 }
                 else if (input == "(")
                 {
-                    closedBracket++;
-                    openingBracket--;
+                    openingBracket++;
                     latest = input;
                 }
             }
