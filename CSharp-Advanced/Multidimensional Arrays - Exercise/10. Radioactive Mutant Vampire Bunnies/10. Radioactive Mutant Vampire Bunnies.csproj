@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>_10._Radioactive_Mutant_Vampire_Bunnies</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\2. Squares in Matrix\2. Squares in Matrix.csproj" />
+  </ItemGroup>
+
+</Project>
