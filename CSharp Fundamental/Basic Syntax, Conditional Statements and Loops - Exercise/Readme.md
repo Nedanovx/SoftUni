@@ -229,6 +229,81 @@ Input|Output
 4.0|
 3.0|
 
+# 10.	Rage Expenses
+As a MOBA challenger player, Petar has the bad habit to trash his PC when he loses a game and rage quits. His gaming setup consists of a headset, mouse, keyboard, and display. You will receive Petar's lost games count. 
+Every second lost game, Petar trashes his headset.
+Every third lost game, Petar trashes his mouse.
+When Petar trashes both his mouse and headset in the same lost game, he also trashes his keyboard.
+Every second time, when he trashes his keyboard, he also trashes his display. 
+You will receive the price of each item in his gaming setup. Calculate his rage expenses for renewing his gaming equipment. 
+
+**Input / Constraints**
+
+-	On the first input line - lost games count – integer in the range [0, 1000].
+-	On the second line – headset price - the floating-point number in the range [0, 1000]. 
+-	On the third line – mouse price - the floating-point number in the range [0, 1000]. 
+-	On the fourth line – keyboard price - the floating-point number in the range [0, 1000]. 
+-	On the fifth line – display price - the floating-point number in the range [0, 1000]. 
+
+**Output**
+
+-	As output you must print Petar's total expenses: "Rage expenses: {expenses} lv."
+-	Allowed working time / memory: 100ms / 16MB.
+
+**Examples:**
+
+Input|Output
+---|---
+7|Rage expenses: 16.00 lv.
+2|
+3|
+4|
+5|	
+&nbsp;|&nbsp;
+23|Rage expenses: 608.00 lv.	
+12.50|
+21.50|
+40|
+200|	
+
+# 11. Orders
+We are placing N orders at a time. You need to calculate the price on the following formula:
+((daysInMonth * capsulesCount) * pricePerCapsule)
+
+**Input / Constraints**
+
+-	On the first line, you will receive integer N – the count of orders the shop will receive.
+-	For each order you will receive the following information:
+-	Price per capsule - the floating-point number in the range [0.00…1000.00]
+-	Days – integer in the range [1…31]
+-	Capsules count - integer in the range [0…2000]
+
+The input will be in the described format, there is no need to check it explicitly.
+
+**Output**
+
+The output should consist of N + 1 line. For each order you must print a single line in the following format:
+-	"The price for the coffee is: ${price}"
+On the last line you need to print the total price in the following format:
+-	 "Total: ${totalPrice}"
+The price must be formatted to 2 decimal places. 
+
+**Examples:**
+
+Input|Output|Input|Output                                      
+---|---|---|---
+1|The price for the coffee is: $367.20|2|The price for the coffee is: $464.07
+1.53|Total: $367.20|4.99|The price for the coffee is: $464.07
+30|&nbsp;|31|Total: $518.32
+8|&nbsp;|3|
+&nbsp;|&nbsp;|0.35|
+&nbsp;|&nbsp;|31
+&nbsp;|&nbsp;|5
+
+
+
+
+
 
 
 
