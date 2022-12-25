@@ -107,9 +107,9 @@ Create a program that reads 3 lines of input. On each line, you get a single cha
 
 Input|Output|Input|Output|Input|Output
 ---  |---   |---  |---   |---  |---
-a    |abc   |%    |%2o    |1  |15p
-b    |&nbsp;|2|  &nbsp;   |5    |
-c    |&nbsp;|o|    &nbsp;   |p    |
+a    |abc   |%    |%2o   |1  |15p
+b    |&nbsp;|2|&nbsp;    |5    |
+c    |&nbsp;|o|&nbsp;    |p    |
 
 # 10.	Lower or Upper
 Create a program that prints whether a given character is upper-case or lower case.
