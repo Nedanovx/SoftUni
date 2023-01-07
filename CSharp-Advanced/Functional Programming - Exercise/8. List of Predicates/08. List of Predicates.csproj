@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>_8._List_of_Predicates</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="C:\Users\nedan\OneDrive\Desktop\tasks\CSharp-Advanced\Functional Programming - Exercise\08. List of Predicates\Program.cs" Link="Program.cs" />
+  </ItemGroup>
+
+</Project>
