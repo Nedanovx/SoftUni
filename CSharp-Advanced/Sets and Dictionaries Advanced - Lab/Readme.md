@@ -1,150 +1,169 @@
-# 1.	Reverse Strings
-Create a program that:
--	Reads an input string
--	Reverses it using a Stack<T>
--	Prints the result back at the terminal
+# 1.	Count Same Values in Array
+Create a program that counts in a given array of double values the number of occurrences of each value. 
 
 **Examples:**
-  
-Input|	Output
-  ---|---
-I Love C#|	#C evoL I
-Stacks and Queues|	seueuQ dna skcatS
 
-# 2.	Stack Sum
-Create a program that:
--	Reads an input of integer numbers and adds them to a stack
--	Reads command until "end" is received
--	Prints the sum of the remaining elements of the stack
-
-**Input**
--	On the first line, you will receive an array of integers
--	On the next lines, until the "end" command is given, you will receive commands – a single command and one or two numbers after the command, depending on what command you are given
--	If the command is "add", you will always receive exactly two numbers after the command which you need to add to the stack
--	If the command is "remove", you will always receive exactly one number after the command which represents the count of the numbers you need to remove from the stack. If there are not enough elements skip the command.
-
-**Output**
--	When the command "end" is received, you need to print the sum of the remaining elements in the stack
-  
-**Examples:**
-  
-Input|	Output| Input|Output
-  ---|---|---|---
-1 2 3 4|Sum: 6|3 5 8 4 1 9|Sum: 16
-adD 5 6||add 19 32
-REmove 3||remove 10
-eNd	||add 89 22
-|||add 89 22
-|||remove 4
-|||remove 3
-|||end	
-
-# 3.	Simple Calculator
-Create a simple calculator that can evaluate simple expressions with only addition and subtraction. There will not be any parentheses.
-Solve the problem using a Stack.
-
-**Examples:**
-Input|	Output|Input|	Output
- ---|---|---|---
-2 + 5 + 10 - 2 - 1|14|2 - 2 + 5|5
-  
-# 4.	Matching Brackets
-We are given an arithmetic expression with brackets. Scan through the string and extract each sub-expression.
-Print the result back at the terminal.
-
-  **Examples:**
-Input|	Output
----|---
-1 + (2 - (2 + 3) * 4 / (3 + 1)) * 5|(2 + 3)
-  ||(3 + 1)
-  ||(2 - (2 + 3) * 4 / (3 + 1))
-  Input|	Output
-  (2 + 3) - (2 + 3)|(2 + 3)
-  ||(2 + 3)
-  
-  # 5.	Print Even Numbers
-Create a program that:
--	Reads an array of integers and adds them to a queue
--	Prints the even numbers separated by ", "
-
-  **Examples:**
-  
-  Input|	Output
-  ---|---
-  1 2 3 4 5 6|2, 4, 6
-  11 13 18 95 2 112 81 46|18, 2, 112, 46
-  
-  
-# 6.	Supermarket
-Reads an input consisting of a name and adds it to a queue until "End" is received. If you receive "Paid", 
-print every customer name and empty the queue, otherwise, we receive a client and we have to add him to the queue.
-When we receive "End" we have to print the count of the remaining people in the queue in the format: "{count} people remaining.".
-  
-**Examples:**
-  
-  Input|	Output|Input|	Output
-  ---|---| ---|---
-Liam|Liam|Amelia|3 people remaining.
-Noah|Noah|Thomas
-James|James|Elias
-Paid|4 people remaining.|End
-Oliver||
-Lucas||
-Logan||
-Tiana||
-End||
-
-  
-# 7.	Hot Potato
-Hot potato is a game in which children form a circle and start passing a hot potato. The counting starts with the first kid. 
-Every nth toss the child left with the potato leaves the game. When a kid leaves the game, it passes the potato along. 
-This continues until there is only one kid left.
-Create a program that simulates the game of Hot Potato.  Print every kid that is removed from the circle. In the end, print the kid that is left last.
-
-**Examples:**
-  
-  Input|Output|Input|Output
-  ---|---|---|---
-Alva James William|Removed James|Lucas Jacob Noah Logan Ethan|Removed Ethan
-2|Removed Alva|10|Removed Jacob
-||Last is William||Removed Noah
-||||Removed Lucas
-||||Last is Logan
-
-
-# 8.	Traffic Jam
-Create a program that simulates the queue that forms during a traffic jam. During a traffic jam, only N cars can pass the crossroads when the light goes green. 
-Then the program reads the vehicles that arrive one by one and adds them to the queue. When the light goes green N number of cars pass the crossroads and for each, 
-a message "{car} passed!" is displayed. When the "end" command is given, terminate the program and display a message with the total number of cars that passed 
-the crossroads.
-  
-**Input**
--	On the first line, you will receive N – the number of cars that can pass during a green light
--	On the next lines, until the "end" command is given, you will receive commands – a single string, either a car or "green"
-
-**Output**
-*	Every time the "green" command is given, print out a message for every car that passes the crossroads in the format "{car} passed!"
-*	When the "end" command is given, print out a message in the format "{number of cars} cars passed the crossroads."
-
-**Examples:**
-  
 Input|Output|Input|Output
-  ---|---|---|---
-4|Hummer H2 passed!|3|Enzo's car passed!
-Hummer H2|Audi passed!|Enzo's car|Jade's car passed!
-Audi|Lada passed!|Jade's car|Mercedes CLS passed!
-Lada|Tesla passed!|Mercedes CLS|Audi passed!
-Tesla|Renault passed!|Audi|BMW X5 passed!
-Renault|Trabant passed!|green|5 cars passed the crossroads.
-Trabant|Mercedes passed!|BMW X5|
-Mercedes|MAN Truck passed!|green|
-MAN Truck|8 cars passed the crossroads.|end|
-green||
-green|
-Tesla|
-Renault|
-Trabant|
-end|
-  
-  
-  
+---|---|---|---
+-2.5 4 3 -2.5 -5.5 4 3 3 -2.5 3|-2.5 - 3 times|2 4 4 5 5 2 3 3 4 4 3 3 4 3 5 3 2 5 4 3|2 - 3 times
+||4 - 2 times||4 - 6 times
+||3 - 4 times||5 - 4 times
+||-5.5 - 1 times||3	- 7 times
+
+# 2.	Average Student Grades
+Create a program, which reads a name of a student and his/her grades and adds them to the student record, then prints the students' names 
+with their grades and their average grade.
+
+**Examples:**
+
+Input|Output|Input|Output
+---|---|---|---
+7|John -> 5.20 3.20 (avg: 4.20)|4|Vlad -> 4.50 5.00 (avg: 4.75)
+John 5.20|Maria -> 5.50 2.50 3.46 (avg: 3.82)|Vlad 4.50|Peter -> 3.00 3.66 (avg: 3.33)
+Maria 5.50|Sam -> 2.00 3.00 (avg: 2.50)|Peter 3.00|
+John 3.20||Vlad 5.00|
+Maria 2.50||Peter 3.66|
+Sam 2.00||
+Maria 3.46||
+Sam 3.00||
+
+# 3.	Largest 3 Numbers
+Read a list of integers and print the largest 3 of them. If there are less than 3, print all of them.
+
+**Examples:**
+
+Input|Output|Input|Output
+---|---|---|---
+10 30 15 20 50 5|50 30 20|20 30|30 20
+
+# 4.	Product Shop
+Create a program that prints information about food shops in Sofia and the products they store. Until the "Revision" command is received, you will be receiving input in the format: "{shop}, {product}, {price}".  Keep in mind that if you receive a shop you already have received, you must collect its product information.
+
+Your output must be ordered by shop name and must be in the format:
+
+"{shop}->
+
+Product: {product}, Price: {price}"
+
+Note: The price should not be rounded or formatted.
+
+**Examples:**
+
+Input|Output|Input|Output
+---|---|---|---
+lidl, juice, 2.30|fantastico->|tmarket, peanuts, 2.20|GoGrill->
+fantastico, apple, 1.20|Product: apple, Price: 1.2|GoGrill, meatballs, 3.30|Product: meatballs, Price: 3.3
+kaufland, banana, 1.10|Product: grape, Price: 2.2|GoGrill, HotDog, 1.40|Product: HotDog, Price: 1.4
+fantastico, grape, 2.20|kaufland->|tmarket, sweets, 2.20|tmarket->
+Revision|Product: banana, Price: 1.1|Revision|Product: peanuts, Price: 2.2
+||lidl->||Product: sweets, Price: 2.2
+||Product: juice, Price: 2.3
+
+
+# 5.	Cities by Continent and Country
+Create a program that reads continents, countries, and their cities put them in a nested dictionary and prints them.
+**Examples:**
+
+Input|Output
+---|---
+9|Europe:
+Europe Bulgaria Sofia|Bulgaria -> Sofia, Plovdiv
+Asia China Beijing|Poland -> Warsaw, Poznan
+Asia Japan Tokyo|Germany -> Berlin
+Europe Poland Warsaw|Asia:
+Europe Germany Berlin|China -> Beijing, Shanghai
+Europe Poland Poznan|Japan -> Tokyo
+Europe Bulgaria Plovdiv|Africa:
+Africa Nigeria Abuja|Nigeria -> Abuja
+Asia China Shanghai|
+
+
+# 6.	Record Unique Names
+Create a program, which will take a list of names and print only the unique names in the list.
+
+**Examples:**
+
+Input|Output|Input|Output
+---|---|---|---
+8|John|7|Lyle
+John|Alex|Lyle|Bruce
+Alex|Sam|Bruce|Alice
+John|Alice|Alice|Easton
+Sam|Peter|Easton|Shawn
+Alex||Shawn
+Alice||Alice
+Peter||Shawn
+Alex||Peter
+
+
+# 7.	Parking Lot
+Create a program that:
+-	Records a car number for every car that enters the parking lot
+-	Removes a car number when the car leaves the parking lot
+
+The input will be a string in the format: "direction, carNumber". You will be receiving commands until the "END" command is given.
+Print the car numbers of the cars, which are still in the parking lot:
+
+**Examples:**
+
+Input|Output|Input|Output
+---|---|---|---
+IN, CA2844AA|CA9999TT|IN, CA2844AA|Parking Lot is Empty
+IN, CA1234TA|CA2844AA|IN, CA1234TA
+OUT, CA2844AA|CA9876HH|OUT, CA2844AA
+IN, CA9999TT|CA2822UU|OUT, CA1234TA
+IN, CA2866HI|||END
+OUT, CA1234TA
+IN, CA2844AA
+OUT, CA2866HI
+IN, CA9876HH
+IN, CA2822UU
+END
+
+
+# 8.	SoftUni Party
+There is a party in SoftUni. Many guests are invited and there are two types of them: VIP and Regular. When a guest comes, check if he/she exists in any of the two reservation lists.
+
+All reservation numbers will be with the length of 8 chars.
+
+All VIP numbers start with a digit.
+First, you will be receiving the reservation numbers of the guests. You can also receive 2 possible commands:
+-	"PARTY" – After this command, you will begin receiving the reservation numbers of the people, who came to the party.
+-	"END" – The party is over and you have to stop the program and print the appropriate output.
+
+In the end, print the count of the guests who didn't come to the party, and afterward, print their reservation numbers. the VIP guests must be first.
+
+**Examples:**
+
+Input|Output|Input|Output
+---|---|---|---
+7IK9Yo0h|2|m8rfQBvl|2
+9NoBUajQ|7IK9Yo0h|fc1oZCE0|xys2FYzn
+Ce8vwPmE|tSzE5t0p|UgffRkOn|MDzcM9ZK
+SVQXQCbc||7ugX7bm0
+tSzE5t0p||9CQBGUeJ
+PARTY||2FQZT3uC
+9NoBUajQ||dziNz78I
+Ce8vwPmE||mdSGyQCJ
+SVQXQCbc||LjcVpmDL
+END||fPXNHpm1
+|||HTTbwRmM
+|||B5yTkMQi
+|||8N0FThqG
+|||xys2FYzn
+|||MDzcM9ZK
+|||PARTY
+|||2FQZT3uC
+|||dziNz78I
+|||mdSGyQCJ
+|||LjcVpmDL
+|||fPXNHpm1
+|||HTTbwRmM
+|||B5yTkMQi
+|||8N0FThqG
+|||m8rfQBvl
+|||fc1oZCE0
+|||UgffRkOn
+|||7ugX7bm0
+|||9CQBGUeJ
+|||END
