@@ -303,13 +303,177 @@ so there will be no knights left that can attack another knight.
 
 </td></tr></table>
 
+# 8. Bombs
 
+You will be given a square matrix of integers, each integer separated by a single space and each row on a new line. Then on the last line of input, you will receive indexes - coordinates to several cells separated by a single space, in the following format: row1,column1 row2,column2 row3,column3 …
 
+On those cells there are bombs. You have to proceed with every bomb, one by one in the order they were given. When a bomb explodes deals damage equal to its integer value, to all the cells around it (in every direction and all diagonals). One bomb can't explode more than once and after it does, its value becomes 0. When a cell's value reaches 0 or below, it dies. Dead cells can't explode.
 
+You must print the count of all alive cells and their sum. Afterward, print the matrix with all of its cells (including the dead ones).
 
+**Input**
+- On the first line, you are given the integer N – the size of the square matrix.
+- The next N lines hold the values for every row – N numbers separated by a space.
+- On the last line, you will receive the coordinates of the cells with the bombs in the format described above.
 
+**Output**
+- On the first line, you need to print the count of all alive cells in the format:
 
+"Alive cells: {aliveCells}"
 
+- On the second line, you need to print the sum of all alive cells in the format:
 
+"Sum: {sumOfCells}"
 
+- At the end print the matrix. The cells must be separated by a single space.
 
+**Constraints**
+- The size of the matrix will be between [0…1000].
+- The bomb coordinates will always be in the matrix.
+- The bomb's values will always be greater than 0.
+- The integers of the matrix will be in the range [1…10000]
+
+**Examples:**
+<table>
+<tr><th>Input</th><th>Output</th><th>Input</th><th>Output</th></tr>
+<tr><td>
+
+4<br/>
+8| 3| 2| 5
+---|---|---|---
+6|4| 7| 9
+9|9| 3| 6
+6|8| 1| 2
+
+1,2 2,1 2,0 
+
+</td><td>
+
+Alive cells: 3<br/> Sum: 12<br/> 
+8| -4| -5| -2
+---|---|---|---
+-3| -3| 0| 2
+0| 0| -4| -1
+-3| -1| -1| 2
+</td>
+<td>
+
+3<br/>
+7| 8| 4
+---|---|---
+3| 1| 5
+6| 4| 9
+
+0,2 1,0 2,2
+
+</td><td>
+  
+Alive cells: 3<br/> Sum: 8<br/> 
+4| 1| 0
+---|---|---
+0| -3| -8
+3| -8| 0
+
+</td></tr></table>
+
+# 9. Miner
+We get as input the size of the field in which our miner moves. The field is always a square. After that, we will receive the commands which represent the directions in which the miner should move. The miner starts from position – 's'. The commands will be: left, right, up, and down. If the miner has reached a side edge of the field and the next command indicates that he has to get out of the field, he must remain in his current position and ignore the current command. The possible characters that may appear on the screen are:
+
+- \* – a regular position on the field
+
+- e – the end of the route.
+
+- c - coal
+
+- s - the place where the miner starts
+
+Each time when the miner finds coal, he collects it and replaces it with '*'. Keep track of the count of the collected coals. If the miner collects all of the coals in the field, the program stops and you have to print the following message:<br/> "You collected all coals! ({rowIndex}, {colIndex})".
+
+If the miner steps at 'e' the game is over (the program stops) and you have to print the following message: "Game over! ({rowIndex}, {colIndex})".
+
+If there are no more commands and none of the above cases had happened, you have to print the following message:<br/> "{remainingCoals} coals left. ({rowIndex}, {colIndex})".
+
+**Input**
+- Field size – an integer number.
+- Commands to move the miner – an array of strings separated by ' '.
+- The field: some of the following characters (*, e, c, s), separated by whitespace (' ').
+
+**Output**
+- There are three types of output:
+- If all the coals have been collected, print the following output: "You collected all coals! ({rowIndex}, {colIndex})".
+- If you have reached the end, you have to stop moving and print the following line: "Game over! ({rowIndex}, {colIndex})".
+- If there are no more commands and none of the above cases had happened, you have to print the following message: "{totalCoals} coals left. ({rowIndex}, {colIndex})".
+
+**Constraints**
+- The field size will be a 32-bit integer in the range [0…2147483647].
+- The field will always have only one's.
+- Allowed working time for your program: 0.1 seconds.
+- Allowed memory: 16 MB.
+
+**Examples:**
+<table>
+<tr><th>Input</th><th>Output</th><th>Input</th><th>Output</th></tr>
+<tr><td>
+
+5<br/>up right right up right<br/>* * * c *<br/>* * * e * <br/>* * c * * <br/>s * * c * <br/> * * c * *
+
+</td><td>
+
+Game over! (1, 3)
+</td>
+<td>
+
+4<br/>up right right right down<br/> * * * e<br/> * * c * <br/> * s * c<br/> * * * *
+
+</td><td>
+  
+You collected all coals! (2, 3
+
+</td></tr></table>
+
+# 10. Radioactive Mutant Vampire Bunnies
+Browsing through GitHub, you come across an old JS Basics teamwork game. It is about very nasty bunnies that multiply extremely fast. There's also a player that has to escape from their lair. You like the game, so you decide to port it to C# because that's your language of choice. The last thing that is left is the algorithm that decides if the player will escape the lair or not.
+
+First, you will receive a line holding integers N and M, which represent the rows and columns in the lair. Then you receive N strings that can only consist of '.', 'B', 'P'. The bunnies are marked with 'B', the player is marked with 'P', and everything else is free space, marked with a dot '.'. They represent the initial state of the lair. There will be only one player. Then you will receive a string with commands such as LLRRUUDD – where each letter represents the next move of the player<br/> (Left, Right, Up, Down).
+
+After each step of the player, each of the bunnies spread to the up, down, left and right (neighboring cells marked as '.' changes their value to 'B'). If the player moves to a bunny cell or a bunny reaches the player, the player has died. If the player goes out of the lair without encountering a bunny, the player has won.
+
+When the player dies or wins, the game ends. All the activities for this turn continue (e.g. all the bunnies spread normally), but there are no more turns. There will be no stalemates where the moves of the player end before he dies or escapes.
+
+Finally, print the final state of the lair with every row on a separate line. On the last line, print either "dead: {row} {col}" or "won: {row} {col}". Row and col are the coordinates of the cell where the player has died or the last cell he has been in before escaping the lair.
+
+**Input**
+- On the first line of input, the numbers N and M are received – the number of rows and columns in the lair.
+- On the next N lines, each row is received in the form of a string. The string will contain only '.', 'B', 'P'. All strings will be the same length. There will be only one 'P' for all the input.
+- On the last line, the directions are received in the form of a string, containing 'R', 'L', 'U', 'D'.
+
+**Output**
+- On the first N lines, print the final state of the bunny lair.
+- On the last line, print the outcome – "won:" or "dead:" + {row} {col}.
+
+**Constraints**
+- The dimensions of the lair are in the range [3…20].
+- The directions string length is in the range [1…20]
+
+**Examples:**
+<table>
+<tr><th>Input</th><th>Output</th><th>Input</th><th>Output</th></tr>
+<tr><td>
+
+5 8<br/> .......B<br/> ...B.... <br/> ....B..B<br/> ........ <br/> ..P.....
+
+ULLL
+
+</td><td>
+
+BBBBBBBB<br/> BBBBBBBB<br/> BBBBBBBB<br/> .BBBBBBB<br/> ..BBBBBB<br/> won: 3 0
+</td>
+<td>
+
+4 5<br/> ..... <br/> ..... <br/> .B... <br/> ...P.<br/> LLLLLLLL
+
+</td><td>
+  
+.B... <br/> BBB.. <br/> BBBB. <br/> .B... <br/>dead: 3 1
+
+</td></tr></table>
