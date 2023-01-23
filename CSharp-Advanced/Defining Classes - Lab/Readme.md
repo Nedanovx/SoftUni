@@ -198,8 +198,8 @@ this.Pressure = pressure;
 Finally, go to the Car class and create private fields and public properties for Engine and Tire[].<br/>
 Create another constructor, which accepts make, model, year, fuelQuantity, fuelConsumption, Engine and Tire[] upon initialization:
 ```ruby
-public Car(string make, string model, int year,double fuelQuantity, double fuelConsumption, Engine engine, Tire[] tires) : this(make, model,year, fuelQuantity, 
-fuelConsumption)
+public Car(string make, string model, int year,double fuelQuantity, double fuelConsumption, Engine engine, Tire[] tires)
+: this(make, model,year, fuelQuantity, fuelConsumption)
 {
 this.Engine = engine;
 this.Tires = tires;
