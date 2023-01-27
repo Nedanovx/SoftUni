@@ -206,3 +206,50 @@ Console.WriteLine(parking.GetStatistics());
 // Peugeot 307(2011)
 // Audi S4(2005)
 ```
+
+# Flower Wreaths
+You want to go on a flowers wreath competition but to participate you have to make at least 5 flower wreaths.
+
+You will be given two sequences of integers, representing roses and lilies. You need to start making wreaths knowing that one wreath needs 15 flowers. Your goal is to make at least 5 flower wreaths.<br/>
+You will start crafting from the last lilies and the first roses. If the sum of their values is equal to 15 – create one wreath and remove them. If the sum is bigger than 15, just decrease the value of the lilies by 2. If the sum is less than 15 you have to store them for later and remove them. You need to stop combining when you have no more roses or lilies. In the end, if you have any stored flowers you should make as many wreaths as you can with them. 
+
+**Input**
+- On the first line, you will receive the integers representing the lilies, separated by ", ".
+- On the second line, you will receive the integers representing the roses, separated by ", ".
+
+**Output**
+-Print whether you have succeeded making at least 5 wreaths:<br/>
+"You made it, you are going to the competition with {count of wreaths} wreaths!"<br/>
+"You didn't make it, you need {wreaths needed} wreaths more!"
+
+**Constraints**
+- All of the given numbers will be valid integers in the range [0, 120].
+- Don't have situation with negative number.
+
+**Examples:**
+<table style="width: 10%;border-collapse: collapse;" border = "2" cellpadding = "10">
+	<tbody>
+		<tr>
+			<td>Input </td>
+			<td>Output </td>
+			<td>Input </td>
+			<td>Output </td>
+		</tr>
+		<tr>
+			<td>10, 15, 2, 7, 9, 13<br/>2, 10, 8, 12, 0, 5
+
+ </td>
+			<td>You made it, you are going to the competition<br/> with 5 wreaths!
+
+
+ </td>
+			<td>10, 5, 3, 7, 8<br/>5, 10, 8, 7, 6
+
+ </td>
+			<td>You didn't make it, you need<br/> 1 wreaths more!
+
+ </td>
+		</tr>
+	</tbody>
+</table>
+
