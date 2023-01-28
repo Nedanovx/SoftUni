@@ -1,4 +1,4 @@
-# Bombs
+# 1. Bombs
 
 Ezio still is learning to make bombs. With their help, he will save civilization. We should help Ezio to make his perfect bombs.
 
@@ -63,7 +63,7 @@ Smoke Decoy Bombs: 3
 	</tbody>
 </table>
 		
-# Snake
+# 2. Snake
 Everyone remembers the old snake games. Now is time to create our own snake game.
 
 You will be given an integer n for the size of the territory with square shape. On the next n lines, you will receive the rows of the territory.
@@ -125,7 +125,7 @@ down<br/>left<br/>down
 	</tbody>
 </table>
 
-# Parking
+# 3. Parking
 Parking games are also among the popular games. Let's create one.
 
 **Preparation**
@@ -207,7 +207,7 @@ Console.WriteLine(parking.GetStatistics());
 // Audi S4(2005)
 ```
 
-# Flower Wreaths
+# 4. Flower Wreaths
 You want to go on a flowers wreath competition but to participate you have to make at least 5 flower wreaths.
 
 You will be given two sequences of integers, representing roses and lilies. You need to start making wreaths knowing that one wreath needs 15 flowers. Your goal is to make at least 5 flower wreaths.<br/>
@@ -253,3 +253,136 @@ You will start crafting from the last lilies and the first roses. If the sum of 
 	</tbody>
 </table>
 
+# 5. Bee
+You will be given an integer n for the size of the bee territory with square shape. On the next n lines, you will receive the rows of the territory. The bee will be placed on a random position, marked with the letter 'B'. On random positions there will be flowers, marked with 'f'. There may also be а bonus on the territory. There will always be only one bonus. It will be marked with the letter - 'O'. All of the empty positions will be marked with '.'.<br/>
+Each turn, you will be given a command for the bee’s movement.
+
+The commands will be: "up", "down", "left", "right", "End".
+
+If the bee moves to a flower, it pollinates the flower and increases the pollinated flowers with one.
+If it goes to a bonus, the bee gets a bonus one move forward and then the bonus disappears. If the bee goes out she can't return back and the program ends. If the bee receives the "End" command the program ends. The bee needs at least 5 pollinated flowers.
+
+**Input**
+- On the first line, you are given the integer n – the size of the square matrix.
+- The next n lines hold the values for every row.
+- On each of the next lines, until you receive "End" command,  you will receive a move command.
+
+**Output**
+-On the first line:<br/>
+If the bee goes out of its territory print: "The bee got lost!"
+- On the second line:<br/>
+If the bee couldn’t pollinate enough flowers, print: "The bee couldn't pollinate the flowers, she needed {needed} flowers more"<br/>
+If the bee successfully pollinated enough flowers, print: "Great job, the bee managed to pollinate {polinationed flowers} flowers!"<br/>
+-In the end print the matrix.
+
+**Constraints**
+- The size of the square matrix will be between [2…10].
+- There will always be 0 or 1 bonus, marked with - 'O'.
+- The bee position will be marked with 'B'.
+- There won't be a case where a bonus moves the bee out of its territory.
+
+**Examples:**
+<table style="width: 10%;border-collapse: collapse;" border = "2" cellpadding = "10">
+	<tbody>
+		<tr>
+			<td>Input </td>
+			<td>Output </td>
+			<td>Input </td>
+			<td>Output </td>
+		</tr>
+		<tr>
+			<td>5<br/>Bff..<br/>..O..<br/>f.f.f<br/>.....<br/>fffff<br/>right<br/>right<br/>down<br/>left<br/>left<br/>down<br/>down<br/>right<br/>down
+
+
+ </td>
+			<td>The bee got lost!<br/>Great job, the bee managed to pollinate 6 flowers!<br/>.....<br/>.....<br/>....f<br/>.....<br/>..fff
+
+
+
+ </td>
+			<td>4<br/>....<br/>.O..<br/>ff..<br/>f.B.<br/>left<br/>left<br/>up<br/>right<br/>up<br/>End
+
+
+ </td>
+			<td>The bee couldn't pollinate the flowers, she needed 2 flowers more<br/>.B..<br/>....<br/>....<br/>....
+
+
+ </td>
+		</tr>
+	</tbody>
+</table>
+
+# 6. Vet Clini
+Problem description
+Your task is to create a repository, which stores items by creating the classes described below.
+First, write a C# class Pet with the following properties:
+- Name: string
+- Age: int
+- Owner: string
+
+The class constructor should receive name, age and owner. The class should override the ToString() method in the following format:
+
+"Name: {Name} Age: {Age} Owner: {Owner}"
+
+Next, write a C# class Clinic that has data (a collection, which stores the Pets). All entities inside the repository have the same properties. Also, the Clinic class should have those properties:
+- Capacity: int
+The class constructor should receive capacity, also it should initialize the data with a new instance of the collection. Implement the following features:
+- Field data – collection that holds added pets
+- Method Add(Pet pet) – adds an entity to the data if there is an empty cell for the pet.
+- Method Remove(string name) – removes the pet by given name, if such exists, and returns bool.
+- Method GetPet(string name, string owner) – returns the pet with the given name and owner or null if no such pet exists.
+- Method GetOldestPet() – returns the oldest Pet.
+- Getter Count – returns the number of pets.
+- GetStatistics() – returns a string in the following format:
+
+"The clinic has the following patients:<br/>
+Pet {Name} with owner: {Owner}<br/>
+Pet {Name} with owner: {Owner}<br/>
+   (…)"
+
+**Constraints**
+- The combinations of names and owners will always be unique.
+- The age of the pets will always be positive.
+
+**Examples:**
+This is an example of how the Clinic class is intended to be used. 
+```ruby
+// Initialize the repository
+Clinic clinic = new Clinic(20);
+
+// Initialize entity
+Pet dog = new Pet("Ellias", 5, "Tim");
+
+// Print Pet
+Console.WriteLine(dog); // Ellias 5 (Tim)
+
+// Add Pet
+clinic.Add(dog);
+
+// Remove Pet
+Console.WriteLine(clinic.Remove("Ellias")); // True
+Console.WriteLine(clinic.Remove("Pufa")); // False
+
+Pet cat = new Pet("Bella", 2, "Mia");
+Pet bunny = new Pet("Zak", 4, "Jon");
+
+clinic.Add(cat);
+clinic.Add(bunny);
+
+// Get Oldest Pet
+Pet oldestPet = clinic.GetOldestPet();
+Console.WriteLine(oldestPet); // Zak 4 (Jon)
+
+// Get Pet
+Pet pet = clinic.GetPet("Bella", "Mia");
+Console.WriteLine(pet); // Bella 2 (Mia)
+
+// Count
+Console.WriteLine(clinic.Count); // 2
+
+// Get Statistics
+Console.WriteLine(clinic.GetStatistics());
+//The clinic has the following patients:
+//Bella Mia
+//Zak Jon
+```
