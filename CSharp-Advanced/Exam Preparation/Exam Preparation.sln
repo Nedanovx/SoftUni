@@ -9,7 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01. Bombs", "01. Bombs\01. 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03. Parking", "03. Parking\03. Parking.csproj", "{0AE7234C-8443-45DC-97FF-976525561849}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04. Flower Wreaths", "04. Flower Wreaths\04. Flower Wreaths.csproj", "{7FD7FF74-999E-4313-9CEE-A6608AA25183}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04. Flower Wreaths", "04. Flower Wreaths\04. Flower Wreaths.csproj", "{7FD7FF74-999E-4313-9CEE-A6608AA25183}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05. Bee", "05. Bee\05. Bee.csproj", "{A16ED616-C28C-44DE-B701-41AB12EF4480}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06. VetClinic", "06. VetClinic\06. VetClinic.csproj", "{DCFFDA15-D1BA-4B2B-B617-EC19652A11C6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{7FD7FF74-999E-4313-9CEE-A6608AA25183}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FD7FF74-999E-4313-9CEE-A6608AA25183}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FD7FF74-999E-4313-9CEE-A6608AA25183}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A16ED616-C28C-44DE-B701-41AB12EF4480}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A16ED616-C28C-44DE-B701-41AB12EF4480}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A16ED616-C28C-44DE-B701-41AB12EF4480}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A16ED616-C28C-44DE-B701-41AB12EF4480}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCFFDA15-D1BA-4B2B-B617-EC19652A11C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCFFDA15-D1BA-4B2B-B617-EC19652A11C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCFFDA15-D1BA-4B2B-B617-EC19652A11C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCFFDA15-D1BA-4B2B-B617-EC19652A11C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

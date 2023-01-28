@@ -27,7 +27,7 @@ namespace _02._Snake
                     matrix[i, j] = rowInfo[j];
                 }
             }
-            
+
             while (feed < 10)
             {
 
@@ -35,7 +35,7 @@ namespace _02._Snake
                 switch (command)
                 {
                     case "left":
-                        if (startCol-1 >= 0)
+                        if (startCol - 1 >= 0)
                         {
                             Left(matrix, ref startRow, ref startCol, ref feed);
                         }
@@ -57,7 +57,7 @@ namespace _02._Snake
                         }
                         break;
                     case "down":
-                        if (startRow + 1 < matrixSize )
+                        if (startRow + 1 < matrixSize)
                         {
                             Down(matrix, ref startRow, ref startCol, ref feed);
                         }
@@ -264,16 +264,16 @@ namespace _02._Snake
         }
 
         public static void PrintMatrixWin(char[,] matrix)
+        {
+            for (int i = 0; i < matrix.GetLength(0); i++)
             {
-                for (int i = 0; i < matrix.GetLength(0); i++)
+                for (var j = 0; j < matrix.GetLength(1); j++)
                 {
-                    for (var j = 0; j < matrix.GetLength(1); j++)
-                    {
-                        Console.Write(matrix[i, j]);
-                    }
-                    Console.WriteLine();
+                    Console.Write(matrix[i, j]);
                 }
+                Console.WriteLine();
             }
         }
     }
+}
 
