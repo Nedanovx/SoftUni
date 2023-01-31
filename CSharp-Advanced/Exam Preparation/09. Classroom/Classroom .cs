@@ -55,9 +55,9 @@ namespace ClassroomProject
               return $"No students enrolled for the subject";        
         }
 
-        public string GetStudentsCount()
+        public int GetStudentsCount()
         {
-            return $"{students.Count}";
+            return students.Count;
         }
         public Student GetStudent(string firstName, string lastName)
         {
