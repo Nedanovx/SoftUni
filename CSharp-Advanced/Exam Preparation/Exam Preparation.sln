@@ -11,9 +11,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03. Parking", "03. Parking\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04. Flower Wreaths", "04. Flower Wreaths\04. Flower Wreaths.csproj", "{7FD7FF74-999E-4313-9CEE-A6608AA25183}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05. Bee", "05. Bee\05. Bee.csproj", "{A16ED616-C28C-44DE-B701-41AB12EF4480}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05. Bee", "05. Bee\05. Bee.csproj", "{A16ED616-C28C-44DE-B701-41AB12EF4480}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06. VetClinic", "06. VetClinic\06. VetClinic.csproj", "{DCFFDA15-D1BA-4B2B-B617-EC19652A11C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "06. VetClinic", "06. VetClinic\06. VetClinic.csproj", "{DCFFDA15-D1BA-4B2B-B617-EC19652A11C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07. Scheduling", "07. Scheduling\07. Scheduling.csproj", "{C6F04436-7CB3-4E3D-B506-FC5D2BEB5E73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08. Garden", "08. Garden\08. Garden.csproj", "{BDD4CE4F-204C-47FC-856E-6CDC41A4C64E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,14 @@ Global
 		{DCFFDA15-D1BA-4B2B-B617-EC19652A11C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCFFDA15-D1BA-4B2B-B617-EC19652A11C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCFFDA15-D1BA-4B2B-B617-EC19652A11C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6F04436-7CB3-4E3D-B506-FC5D2BEB5E73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6F04436-7CB3-4E3D-B506-FC5D2BEB5E73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6F04436-7CB3-4E3D-B506-FC5D2BEB5E73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6F04436-7CB3-4E3D-B506-FC5D2BEB5E73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDD4CE4F-204C-47FC-856E-6CDC41A4C64E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDD4CE4F-204C-47FC-856E-6CDC41A4C64E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDD4CE4F-204C-47FC-856E-6CDC41A4C64E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDD4CE4F-204C-47FC-856E-6CDC41A4C64E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
