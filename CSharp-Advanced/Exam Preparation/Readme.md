@@ -580,4 +580,114 @@ Console.WriteLine(classroom.GetStudent("Dean", "Winchester"));
 
 ```
 
+# 10. Cooking
+You are asked to cook baked foods for the near bakery, because your recipes are so great. You need to mix liquids with ingredients to cook the required delicacies.
+First, you will be given a sequence of integers, representing liquids. Afterwards, you will be given another sequence of integers representing ingredients.
+You need to start from the first liquid and try to mix it with the last ingredient. If the sum of their values is equal to any of the items in the table below – cook the food corresponding to the value and remove both the liquid and the ingredient. Otherwise, remove only the liquid and increase the value of the ingredient by 3.<br/>
+You need to stop cooking when you have no more liquids or ingredients.
 
+Food|Value needed
+---|---
+Bread|	25
+Cake|	50
+Pastry|	75
+Fruit Pie|100
+
+In order to cook enough food for the bakery, you need one of each of the foods. 
+
+**Input**
+- On the first line, you will receive the integers representing the liquids, separated by a single space. 
+- On the second line, you will receive the integers representing the ingredients, separated by a single space.
+
+**Output**
+- On the first line of output – print if you succeeded in cooking everything:
+  - "Wohoo! You succeeded in cooking all the food!" 
+  - "Ugh, what a pity! You didn't have enough materials to cook everything." 
+- On the second line - print all liquids you have left:
+  - If there are no liquids: "Liquids left: none"
+  - If there are liquids: "Liquids left: {liquid1}, {liquid2}, {liquid3}, (…)"
+- On the third line - print all ingredients you have left:
+  - If there are no items: "Ingredients left: none"
+  - If there are items: "Ingredients left: {ingredient}, {ingredient}, {ingredient}, (…)"
+- Then, you need to print all products you have cooked and the amount you have of them, ordered alphabetically:<br/>
+"Bread: {amount}"<br/>
+"Cake: {amount}"<br/>
+"Fruit Pie: {amount}"<br/>
+"Pastry: {amount}"<br/>
+
+**Constraints**
+- All of the given numbers will be valid integers in the range [0, 100].
+
+**Examples:**
+<table >
+	<tbody>
+		<tr>
+			<td>Input </td>
+			<td>Output </td>
+		</tr>
+		<tr>
+			<td>1 25 50 50<br/>50 25 25 24
+ </td>
+			<td>Wohoo! You succeeded in cooking all the food!<br/>Liquids left: none<br/>Ingredients left: none<br/>Bread: 1<br/>Cake: 1<br/>Fruit pie: 1
+<br/>Pastry: 1
+ </td>
+		</tr>
+		<tr>
+			<td>Input </td>
+			<td>Output </td>
+		</tr>
+		<tr>
+			<td>10 20 30 40 50<br/>50 40 30 30 15
+ </td>
+			<td>Ugh, what a pity! You didn't have enough materials to cook everything.<br/>Liquids left: none<br/>Ingredients left: 39, 40, 50<br/>
+Bread: 1<br/>Cake: 1<br/>Fruit pie: 0<br/>Pastry: 0
+		</tr>
+	</tbody>
+</table>
+
+# 11. Selling 
+You successfully started your cooking journey, so now you need to sell the products from your basket  in the bakery in order to collect your price.
+You will be given an integer n for the size of the bakery with square shape. On the next n lines, you will receive the rows of the bakery. You will be placed on a random position, marked with the letter 'S'. On random positions there will be clients, marked with a single digit. There may also be pillars. Their count will be either 0 or 2 and they are marked with the letter - 'O'. All of the empty positions will be marked with '-'.<br/>
+Each turn, you will be given commands for the your movement. Move commands will be: "up", "down", "left", "right". If you move to a client, you collects the price equal to the digit there and the client disappears. If you move to a pillar, you move on the position of the other pillar and then both pillars disappear. If you go out of the bakery, you disappear from the bakery and you are out of there. You need at least 50 dollars to rent your own Bakery
+When you are out of the bakery or you collect enough money, the program ends.
+
+**Input**
+- On the first line, you are given the integer n – the size of the square matrix.
+- The next n lines holds the values for every row.
+- On each of the next lines you will get a move command.
+
+**Output**
+- On the first line:
+  - If the player goes to the void, print: "Bad news, you are out of the bakery."
+  - If the player collects enough star power, print: "Good news! You succeeded in collecting enough money!"
+- On the second line print all star power collected: "Money: {money}"
+- In the end print the matrix.
+
+**Constraints**
+- The size of the square matrix will be between [2…10].
+- There will always be 0 or 2 pillars, marked with the letter - 'O'.
+- Your position will be marked with 'S'.
+- You will always go out of the bakery or collect enough money.
+
+**Examples:**
+<table >
+	<tbody>
+		<tr>
+			<td>Input </td>
+			<td>Output </td>
+			<td>Input </td>
+			<td>Output </td>
+		</tr>
+		<tr>
+			<td>5<br/>SO---<br/>-----<br/>-----<br/>-----<br/>----O<br/>right<br/>right
+ </td>
+			<td>Bad news, you are out of the bakery.<br/>Money: 0<br/>-----<br/>-----<br/>-----<br/>-----<br/>-----
+ </td>
+			<td>6<br/>S98---<br/>99----<br/>666666<br/>------<br/>--77--<br/>-6-6-6<br/>right<br/>right<br/>down<br/>left<br/>left<br/>down<br/>right
+<br/>right
+ </td>
+			<td>Good news! You succeeded in collecting enough money!<br/>Money: 53<br/>------<br/>------<br/>--S666<br/>------<br/>--77--<br/>-6-6-6
+ </td>
+		</tr>
+	</tbody>
+</table>
