@@ -156,6 +156,15 @@ Book bookTwo = new Book("The Documents in the Case", 2002, "Dorothy Sayers",
 Book bookThree = new Book("The Documents in the Case", 1930);
 
 Library library = new Library(bookOne, bookTwo, bookThree);
+
+foreach (var book in library)
+
+{
+
+Console.WriteLine(book);
+
+}
+
 }
   ```
   This is the expected output from the above code:
