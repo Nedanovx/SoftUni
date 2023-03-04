@@ -1,4 +1,4 @@
-# 01. 1.	Shapes
+# 01. Shapes
 NOTE: You need a public StartUp class with the namespace Shapes.
 
 Build a hierarchy of interfaces and classes: 
@@ -21,7 +21,7 @@ rect.Draw();
 
 ![Untitled1](https://user-images.githubusercontent.com/107359038/222923519-2e129fbf-7e2c-41c8-91c8-f3bfc908baf2.jpg)
 
-# 02. 2.	Cars
+# 02. Cars
 NOTE: You need a public StartUp class with the namespace Cars.
 
 Build a hierarchy of interfaces and classes:
