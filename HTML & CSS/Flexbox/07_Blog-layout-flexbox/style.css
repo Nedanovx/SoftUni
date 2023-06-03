@@ -1,0 +1,56 @@
+body{
+    background-color: rgb(238, 238, 238);
+}
+.page{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2em 5em;
+}
+.page h1,
+.page h2,
+.page h3,
+.page blockquote{
+    flex: 0 1 100%;
+    font-family: Georgia, serif;
+}
+.page header{
+    flex-basis: 100%;
+    border-bottom: 2px solid black;
+}
+.page > main{
+    flex: 1 1 35rem; 
+}
+.align-right{
+    display: block;
+    background-color: rgb(255, 255, 255);
+    padding: 0.5em;
+    margin: 0 0 0.5em 0.5em;
+    border: 2px solid black;
+    float: right;
+}
+blockquote{
+    border-left: 3px solid grey;
+    padding-left: 1em;
+    opacity: 0.5;
+    width: 40%;
+    float: right;
+}
+blockquote span{
+    float: right;
+}
+.align-left{
+    display: block;
+    background-color: rgb(255, 255, 255);
+    padding: 0.5em;
+    margin: 0 0.5em 0.5em 0;
+    border: 2px solid black;
+    float: left;
+}
+.page > aside{
+    margin-left: 2em;
+    flex: 1 1 15rem;
+}
+a{
+    color: rgb(0, 153, 0);
+    text-decoration: none;
+}

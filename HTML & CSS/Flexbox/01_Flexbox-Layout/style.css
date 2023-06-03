@@ -1,0 +1,35 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+body{
+    background-color: #EEEEEE;
+    padding: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+header, footer{
+    flex-basis: 100%;
+    padding: 2rem;
+    background-color: #FFFFFF;
+    border-radius: 0.4rem;
+    color: #000;
+    margin: 5px;
+}
+main{
+    flex: 8 1 40rem;
+    padding: 2rem;
+    background-color: #FFF;
+    border-radius: 0.4rem;
+    color: #000;
+    margin: 5px;
+    height: 320px;
+}
+aside{
+    flex: 2 1 20rem;
+    padding: 2rem;
+    background-color: #FFF;
+    border-radius: 0.4rem;
+    color: #000;
+    margin: 5px;
+    height: 320px;
+}

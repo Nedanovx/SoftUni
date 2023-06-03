@@ -1,0 +1,21 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+html{
+    font-family: Helvetica, sans-serif;
+    line-height: 1.5;
+}
+h2{
+    font-family: Georgia, sans-serif;
+    line-height: 1.2;
+}
+section{
+    display: flex;
+    justify-content: space-between;
+    max-width: 70vw;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+article{
+    margin: 8px;
+}

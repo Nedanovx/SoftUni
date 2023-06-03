@@ -1,0 +1,35 @@
+html{
+    margin: 2em;
+}
+.container{
+    max-width: 65vw;
+}
+.container, .notes, .week{
+    display: flex;
+    text-align: center; 
+}
+.week{
+    flex-wrap: wrap;
+}
+.week span{
+    flex-grow: 1;
+    border: 1px solid black;
+    padding: 2em;
+}
+.week :nth-child(1){
+    flex: 1 1 100%;
+}
+.week :nth-child(7){
+    flex: 1 1 100%;
+}
+.notes{
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+}
+.notes span{
+    flex: 1 1 20%;
+    border: 1px solid black;
+    padding: 2em;
+}
+

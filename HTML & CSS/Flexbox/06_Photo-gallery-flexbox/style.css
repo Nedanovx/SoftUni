@@ -1,0 +1,17 @@
+body{
+    margin: 2em;
+}
+body, ul, li{
+    display: flex;
+    flex-wrap: wrap;
+}
+ul{
+    max-width: 900;
+    justify-content: space-between;
+    gap: 2em;
+}
+.gallery ul li{
+    border: 8px solid black;
+    background-color: white;
+    padding: 2em;
+}
