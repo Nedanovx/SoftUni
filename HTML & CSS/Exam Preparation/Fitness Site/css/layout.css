@@ -1,0 +1,19 @@
+body {
+    background: #000;
+}
+
+.site {
+    max-width: 870px;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: url(../image/fitness-main.jpg);
+    background-size: 120% auto;
+    background-position: center -12em;
+    background-repeat: no-repeat;
+}
+
+.site-footer {
+    margin-top: auto;
+}

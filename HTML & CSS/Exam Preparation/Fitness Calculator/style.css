@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+*, *::before, *::after{
+    box-sizing: inherit;
+}
+html{
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+body{
+    max-width: 1000px;
+    height: 100vh;
+    margin: 0 auto;
+}
+.container{
+    flex: 1 0 auto;
+    height: 80%;
+    display: flex;
+    margin-top: 4em;
+    flex: 0 1 50%;
+    background: rgba(246, 247, 248, 1);
+    border: 1px solid black;
+    border-radius: 12px;
+    gap: 2em;
+}
+.container img{
+    display: block;
+    width: 50%;
+    height: 100%;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+aside{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    padding-bottom: 0.5em;
+    padding-right: 3em;
+}
+aside h2{
+    margin-bottom: 1em;
+}
+a{
+    color: black;
+    display:inline-block;
+    text-decoration: none;
+    background-color: rgba(224, 224, 223, 1);
+    padding: 0.3em;
+    border-radius: 6px;
+}
+a:hover{
+    background: green;
+}
+.standar{
+    float: left;
+    margin-left: 2em;
+}
+.gender{    
+    float: left;
+    margin-left: 8em;
+}
+.year{
+    float: right;
+    margin-right: 4em;
+}
+.weigth {
+    display: block;
+    width: 100%;
+}
+.height input{
+    display: inline-block;
+    width: auto;
+}
+button{
+    background: rgba(5, 162, 211, 1);
+    border-radius: 15px;
+    padding: 0.4em;
+}
