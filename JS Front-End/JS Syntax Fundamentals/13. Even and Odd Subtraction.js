@@ -1,4 +1,4 @@
-function differentBetweenOddAndEvenSum(arr){
+function differentBetweenOddSumAndEvenSum(arr){
     let oddSum = 0;
     let evenSum = 0;
     for(let i = 0; i < arr.length; i++){
