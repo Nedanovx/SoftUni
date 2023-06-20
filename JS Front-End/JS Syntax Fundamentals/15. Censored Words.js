@@ -1,4 +1,4 @@
-function solve(text, word){
+function censoredWords(text, word){
     while(text.includes(word)){
         string = text.replace(word, '*'.repeat(word.length));
     }

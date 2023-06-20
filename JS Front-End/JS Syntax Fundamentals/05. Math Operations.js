@@ -1,4 +1,4 @@
-function solve(num1, num2, operation){
+function mathOperations(num1, num2, operation){
     let result;
     switch(operation){
         case `+`:

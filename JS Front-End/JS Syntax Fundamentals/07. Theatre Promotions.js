@@ -1,4 +1,4 @@
-function solve(day, age){
+function ticketsPrace(day, age){
     switch(day){
         case `Weekday`:
         if(0 <= age && age <= 18){

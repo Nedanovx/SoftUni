@@ -1,4 +1,4 @@
-function solve(num){
+function monthPrinter(num){
     switch(num){
         case 1:
             console.log(`January`);

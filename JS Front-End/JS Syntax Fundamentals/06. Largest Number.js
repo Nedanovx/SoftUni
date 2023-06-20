@@ -1,4 +1,4 @@
-function solve(num1, num2, num3){
+function largestNumber(num1, num2, num3){
     let max = Number.MIN_SAFE_INTEGER;
     if(num1 > max){
         max = num1;
