@@ -1,4 +1,4 @@
-function solve(speed, area){
+function roadRadar(speed, area){
     let motorwayArea = 130;
     let interstateArea = 90;
     let cityArea = 50;

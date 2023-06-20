@@ -1,4 +1,4 @@
-function solve(countOfgroup, group, day){
+function vacantionPrice(countOfgroup, group, day){
     let total = 0;
     switch(group){
         case'Students':

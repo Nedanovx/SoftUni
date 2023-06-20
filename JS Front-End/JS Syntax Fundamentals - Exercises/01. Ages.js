@@ -1,4 +1,4 @@
-function solve(age){
+function age(age){
     if(0 <= age && age <= 2){
         console.log('baby');
     }
