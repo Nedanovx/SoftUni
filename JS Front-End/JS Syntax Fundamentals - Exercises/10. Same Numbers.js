@@ -1,4 +1,4 @@
-function solve(input){
+function sameNumbers(input){
     let arr = input.toString();
     let sum = 0;
     let isSame = true;

@@ -1,4 +1,4 @@
-function solve(numbers){
+function sortingNumbers(numbers){
     let sortedNumbers = [...numbers].sort((a, b) => a - b);
     let count = 0;
     let result = [];
@@ -13,4 +13,4 @@ function solve(numbers){
     }
     return result;
 }
-console.log(solve([1, 65, 3, 52, 48, 63, 31, -3, 18, 56]));
+console.log(sortingNumbers([1, 65, 3, 52, 48, 63, 31, -3, 18, 56]));
