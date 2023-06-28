@@ -1,11 +1,11 @@
-function vacantionPrice(countOfgroup, group, day){
+function vacantionPrice(countOfGroup, typeOfGroup, day){
     let total = 0;
-    switch(group){
+    switch(typeOfGroup){
         case'Students':
         switch(day){
             case'Friday':
-            total = countOfgroup * 8.45;
-            if(countOfgroup >= 30){         
+            total = countOfGroup * 8.45;
+            if(countOfGroup >= 30){         
                 total *=0.85;
                 console.log('Total price:', total.toFixed(2));
             }
@@ -14,8 +14,8 @@ function vacantionPrice(countOfgroup, group, day){
             }
             break;
             case'Saturday':
-             total = countOfgroup * 9.80;
-            if(countOfgroup >= 30){         
+             total = countOfGroup * 9.80;
+            if(countOfGroup >= 30){         
                 total *=0.85;
                 console.log('Total price:', total.toFixed(2));
             }
@@ -24,8 +24,8 @@ function vacantionPrice(countOfgroup, group, day){
             } 
             break;
             case'Sunday':
-             total = countOfgroup * 10.46;
-            if(countOfgroup >= 30){         
+             total = countOfGroup * 10.46;
+            if(countOfGroup >= 30){         
                 total *=0.85;
                 console.log('Total price:', total.toFixed(2));
             }
@@ -38,8 +38,8 @@ function vacantionPrice(countOfgroup, group, day){
         case'Business':
         switch(day){
             case'Friday':
-            total = countOfgroup * 10.9;
-            if(countOfgroup >= 100){         
+            total = countOfGroup * 10.9;
+            if(countOfGroup >= 100){         
                 total -= 109;
                 console.log('Total price:', total.toFixed(2));
             }
@@ -48,8 +48,8 @@ function vacantionPrice(countOfgroup, group, day){
             }
             break;
             case'Saturday':
-             total = countOfgroup * 15.60;
-            if(countOfgroup >= 100){         
+             total = countOfGroup * 15.60;
+            if(countOfGroup >= 100){         
                 total -= 156;
                 console.log('Total price:', total.toFixed(2));
             }
@@ -58,8 +58,8 @@ function vacantionPrice(countOfgroup, group, day){
             }
             break;
             case'Sunday':
-             total = countOfgroup * 16;
-            if(countOfgroup >= 100){         
+             total = countOfGroup * 16;
+            if(countOfGroup >= 100){         
                 total -= 160;
                 console.log('Total price:', total.toFixed(2));
             }
@@ -72,8 +72,8 @@ function vacantionPrice(countOfgroup, group, day){
         case'Regular':
         switch(day){
             case'Friday':
-            total = countOfgroup * 15;
-            if(countOfgroup >= 10 && countOfgroup <= 20){         
+            total = countOfGroup * 15;
+            if(countOfGroup >= 10 && countOfGroup <= 20){         
                 total *= 0.95;
                 console.log('Total price:', total.toFixed(2));
             }
@@ -82,8 +82,8 @@ function vacantionPrice(countOfgroup, group, day){
             }
             break;
             case'Saturday':
-             total = countOfgroup * 20;
-            if(countOfgroup >= 10 && countOfgroup <= 20){         
+             total = countOfGroup * 20;
+            if(countOfGroup >= 10 && countOfGroup <= 20){         
                 total *= 0.95;
                 console.log('Total price:', total.toFixed(2));
             }
@@ -92,8 +92,8 @@ function vacantionPrice(countOfgroup, group, day){
             }
             break;
             case'Sunday':
-             total = countOfgroup * 22.5;
-            if(countOfgroup >= 10 && countOfgroup <= 20){         
+             total = countOfGroup * 22.5;
+            if(countOfGroup >= 10 && countOfGroup <= 20){         
                 total *= 0.95;
                 console.log('Total price:', total.toFixed(2));
             }
