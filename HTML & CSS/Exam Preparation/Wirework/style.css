@@ -1,0 +1,166 @@
+@import url(reset.css);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css);
+body{
+    font-family: Helvetica, sans-serif;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    padding-left: 15px;
+}
+.main{
+    font-weight: bold;
+    font-size: 46px;
+    line-height: 1;
+}
+.diveder{
+    width: 1px;
+    height: 50px;
+    background-color: #e4e4e4;
+    display: inline-block;
+}
+.sub{
+    font-size: 14px;
+    line-height: 1;
+}
+.navigation{
+    display: flex;
+}
+.navigation ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 5px;
+    margin-right: 0px;
+    margin-left: 35em;
+}
+.navigation li{
+    text-decoration: none;
+    padding: 1rem, 2rem;
+    background-color: #ececec;
+    color: #363837;
+    
+}
+.navigation li:first-child{
+    background-color: #e24e2a;
+    color: white;
+}
+.nav-link{
+    text-decoration: none;
+    color: inherit;
+    line-height: 1;
+    padding: 3px;
+}
+#hero{
+    height: calc(100vh - 50px);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+}
+.img-container{
+    height: 90%;
+    overflow: hidden;
+}
+.hero-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.content{
+    background-color: red;
+    height: 10%;
+    padding: 4em;
+    margin: 0 auto;
+    color: white;
+    line-height: 1.5;
+    font-size: 15px;
+    text-align: center;
+}
+.content span{
+    font-weight: bold;
+}
+.content a{
+    font-weight: bold;
+    color: inherit;
+}
+#feature{
+    padding: 2em;
+    background-color: #383838;
+    color: white;
+}
+.section-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    list-style: none;
+}
+.section-grid-item{
+    text-align: center;
+}
+#feature i{
+    background-color: red;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 48px;
+}
+#feature .divider{
+    margin: 1rem;
+    height: 1px;
+    background-color: #6b6c6c;
+}
+#feature p{
+    color: #6b6c6c;
+}
+#advantages{
+    padding: 2em;
+    background-color: #383838;
+    color: white;
+}
+#advantages h4{
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+
+}
+#advantages p{
+    color: #6b6c6c;
+}
+#subscribe{
+    background-color: white;
+    text-align: center;
+    padding: 2em;
+}
+#subscribe h3{
+    font-size: 48px;
+    color: #555555;
+}
+#subscribe p{
+    color: #a2a2b2;
+    font-size: 22px;
+    margin-bottom: 2rem;
+}
+#subscribe button{
+    background-color: #1b9772;
+    margin-bottom: 2rem;
+    padding: 1em 2em;
+    letter-spacing: 2px;
+    color: white;
+    font-size: 22px;
+}
+.footer{
+    background-color: #1b9772;
+    text-align: center;
+    padding: 2rem;
+    color: #53b499;
+}
+.footer span{
+    color: #82c3ac;
+    letter-spacing: 2px;
+}
