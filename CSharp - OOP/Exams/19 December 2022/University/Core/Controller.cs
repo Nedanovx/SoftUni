@@ -120,7 +120,7 @@ namespace UniversityCompetition.Core
                 return string.Format(OutputMessages.InvalidSubjectId);
             }
 
-            if(student.CoveredExams.Contains(studentId))
+            if(student.CoveredExams.Contains(subjectId))
             {
                 return String.Format(OutputMessages.StudentAlreadyCoveredThatExam, student.FirstName, student.LastName, subject.Name);
             }
