@@ -1,6 +1,8 @@
 CREATE DATABASE CarRental
+GO
 
 USE CarRental
+GO
 
 CREATE TABLE Categories 
 (

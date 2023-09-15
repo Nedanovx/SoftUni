@@ -1,6 +1,8 @@
 CREATE DATABASE SoftUni
+GO
 
 USE SoftUni
+GO
 
 CREATE TABLE Towns
 (

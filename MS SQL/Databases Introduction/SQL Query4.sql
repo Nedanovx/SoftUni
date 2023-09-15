@@ -1,6 +1,8 @@
 CREATE DATABASE Movies
+GO
 
 USE Movies
+GO
 
 CREATE TABLE Directors
 (
