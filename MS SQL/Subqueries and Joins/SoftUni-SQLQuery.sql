@@ -93,11 +93,20 @@ ORDER BY e.EmployeeID
 
 --08. Employee 24
 
-SELECT e.EmployeeID, e.FirstName, IIF(YEAR(p.StartDate) >= 2005, NULL, p.[Name]) AS ProjectName 
+SELECT e.EmployeeID, e.FirstName,
+
+CASE
+
+WHEN YEAR(p.StartDate) >= 2005 THEN NULL
+
+ELSE P.Name
+
+END AS ProjectName 
 
 FROM Employees AS e
 
 JOIN EmployeesProjects AS ep ON e.EmployeeID = ep.EmployeeID AND e.EmployeeID = 24
+
 JOIN Projects AS p ON p.ProjectID = ep.ProjectID
 
 --09. Employee Manager
