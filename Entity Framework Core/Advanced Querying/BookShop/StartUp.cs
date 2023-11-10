@@ -4,12 +4,9 @@
     using Data;
     using Initializer;
     using Microsoft.EntityFrameworkCore;
-    using Microsoft.EntityFrameworkCore.Storage;
     using System.Collections.Immutable;
     using System.Globalization;
     using System.Linq;
-    using System.Runtime.Serialization;
-    using System.Text;
 
     public class StartUp
     {
@@ -18,9 +15,9 @@
             using var db = new BookShopContext();
             DbInitializer.ResetDatabase(db);
 
-            string input = Console.ReadLine();
             
-            Console.WriteLine(GetBookTitlesContaining(db, input));
+            
+            Console.WriteLine(GetTotalProfitByCategory(db));
            
 
         }
@@ -147,6 +144,64 @@
                 .ToList();
 
             return String.Join(Environment.NewLine, books.Select(b => b.Title));
+        }
+
+        public static string GetBooksByAuthor(BookShopContext context, string input)
+        {
+            var authors = context.Books
+                .Where(b => b.Author.LastName.ToLower().StartsWith(input.ToLower()))
+                .Select(b => new
+                {
+                    b.Title,
+                    b.Author.FirstName,
+                    b.Author.LastName
+                })
+                .ToList();
+
+            return String.Join(Environment.NewLine, authors.Select(a => $"{a.Title} ({a.FirstName} {a.LastName})"));
+        }
+
+        public static int CountBooks(BookShopContext context, int lengthCheck)
+        {
+            var books = context.Books
+                .Where(b => b.Title.Length > lengthCheck)
+                .Count();
+
+            return books;
+        }
+
+        public static string CountCopiesByAuthor(BookShopContext context)
+        {
+            var authors = context.Authors        
+                .Select(a => new
+                {
+                    a.FirstName,
+                    a.LastName,
+                    Copies = a.Books.Sum(x => x.Copies)
+                })
+                .OrderByDescending(x => x.Copies)
+                .ToList();
+
+
+
+            return String.Join(Environment.NewLine, authors.Select(a => $"{a.FirstName} {a.LastName} - {a.Copies}"));
+                
+        }
+
+        public static string GetTotalProfitByCategory(BookShopContext context)
+        {
+            var result = context.Categories
+                .Select(c => new
+                {
+                    c.Name,
+                    Total = c.CategoryBooks.Sum(cb => cb.Book.Copies * cb.Book.Price)
+                })
+                .OrderByDescending(x => x.Total)
+                .ThenBy(x => x.Name);
+
+                
+
+            return String.Join(Environment.NewLine, result.Select(x => $"{x.Name} ${x.Total:f2}"));
         }
     }
 }
