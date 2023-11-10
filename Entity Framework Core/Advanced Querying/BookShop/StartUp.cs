@@ -252,15 +252,14 @@
         public static int RemoveBooks(BookShopContext context)
         {
             var books = context.Books
-                .Where(b => b.Copies < 4200);
-
-            int count = books.Count();
+                .Where(b => b.Copies < 4200)
+                .ToList();  
 
             context.RemoveRange(books);
 
             context.SaveChanges();
 
-            return count;
+            return books.Count();
         }
     }
 }
