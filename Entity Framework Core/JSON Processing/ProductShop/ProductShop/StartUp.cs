@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Bson;
 using ProductShop.Data;
 using ProductShop.Models;
 
@@ -24,9 +25,15 @@ namespace ProductShop
 
             string productsCategoriesJson = File.ReadAllText("../../../Datasets/categories-products.json");
 
-            Console.WriteLine(ImportCategories(db, productsCategoriesJson));
+            Console.WriteLine(ImportCategoryProducts(db, productsCategoriesJson));
 
             Console.WriteLine(GetProductsInRange(db));
+
+            Console.WriteLine(GetSoldProducts(db));
+
+            Console.WriteLine(GetCategoriesByProductsCount(db));
+
+            Console.WriteLine(GetUsersWithProducts(db));
 
 
         }
@@ -91,6 +98,95 @@ namespace ProductShop
 
             var resultJson = JsonConvert.SerializeObject(result, Formatting.Indented);
             return resultJson;
+        }
+
+        public static string GetSoldProducts(ProductShopContext context)
+        {
+            var result = context.Users
+                .Where(u => u.ProductsSold.Any(p => p.BuyerId != null))
+                .OrderBy(u => u.LastName)
+                .ThenBy(u => u.FirstName)
+                .Select(u => new
+                {
+                    firstName = u.FirstName,
+                    lastName = u.LastName,
+                    soldProducts = u.ProductsSold
+                    .Where(p => p.BuyerId != null)
+                    .Select(p => new
+                    {
+                        name = p.Name,
+                        price = p.Price,
+                        buyerFirstName = p.Buyer.FirstName,
+                        buyerLastName = p.Buyer.LastName
+                    }).ToArray()
+                }).ToArray();
+
+            string resultJson = JsonConvert.SerializeObject(result, Formatting.Indented);
+            return resultJson;
+        }
+
+        public static string GetCategoriesByProductsCount(ProductShopContext context)
+        {
+            var result = context.Categories
+                .Select(c => new
+                {
+                    category = c.Name,
+                    productsCount = c.CategoriesProducts.Count,
+                    averagePrice = c.CategoriesProducts.Average(cp => cp.Product.Price).ToString("f2"),
+                    totalRevenue = c.CategoriesProducts.Sum(cp => cp.Product.Price).ToString("f2")
+                })
+                .OrderByDescending(x => x.productsCount)
+                .ToArray();
+
+            string jsonResult = JsonConvert.SerializeObject(result, Formatting.Indented);
+            return jsonResult;
+        }
+
+        public static string GetUsersWithProducts(ProductShopContext context)
+        {
+            var result = context.Users
+                .Where(u => u.ProductsSold.Any(p => p.BuyerId != null))
+                .Select(u => new
+                {
+                    firstName = u.FirstName,
+                    lastName = u.LastName,
+                    age = u.Age,
+                    soldProducts = u.ProductsSold
+                    .Where(p => p.BuyerId != null)
+                    .Select(p => new
+                    {
+                        name = p.Name,
+                        price = p.Price
+                    })
+                    .ToArray()
+                })
+                .OrderByDescending(x => x.soldProducts.Length)
+                .ToArray();
+
+            var output = new
+            {
+                usersCount = result.Length,
+                users = result.Select(u => new
+                {
+                    u.firstName,
+                    u.lastName,
+                    u.age,
+                    soldProducts = new
+                    {
+                        count = u.soldProducts.Length,
+                        products = u.soldProducts
+                    }
+                })
+
+            };
+
+            string jsonOutput = JsonConvert.SerializeObject(output, new JsonSerializerSettings
+            {
+                Formatting = Formatting.Indented,
+                NullValueHandling = NullValueHandling.Ignore
+            });
+
+            return jsonOutput;
         }
     }
 }
