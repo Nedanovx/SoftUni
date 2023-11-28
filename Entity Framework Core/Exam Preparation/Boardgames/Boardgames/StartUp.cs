@@ -44,7 +44,7 @@
             var exportCreatorsWithTheirBoardgames = DataProcessor.Serializer.ExportCreatorsWithTheirBoardgames(context);
             Console.WriteLine(exportCreatorsWithTheirBoardgames);
             File.WriteAllText(exportDir + "Actual Result - ExportCreatorsWithTheirBoardgames.xml", exportCreatorsWithTheirBoardgames);
-
+            
             var year = 2021;
             double rating = 9.50;
             var exportSellersWithMostBoardgames = DataProcessor.Serializer.ExportSellersWithMostBoardgames(context, year, rating);
