@@ -510,3 +510,152 @@ and ring range is bigger than **2.55**. Order the result by cigar name (**ascend
 		</tr>
 	</tbody>
 </table>
+
+# 09. Clients with ZIP Codes
+Select all clients which have addresses with **ZIP** code that contains **only digits**, and display they're the most expensive cigar.</br>
+Order by client full name ascending.
+
+**Required columns**
+- FullName
+- Country
+- ZIP
+- CigarPrice – formated as "${CigarPrice}"
+
+**Example**
+<table >
+	<tbody>
+		<tr>
+			<td><b>FullName</b></td>
+			<td><b>Country</b></td>
+			<td><b>ZIP</b></td>
+			<td><b>CigarPrice</b></td>
+		</tr>
+		<tr>
+			<td>Betty Wallace</td>
+			<td>Turkey</td>
+			<td>13760</td>
+			<td>$555.45</td>
+		</tr>
+		<tr>
+			<td>Joan Peters</td>
+			<td>Japan</td>
+			<td>06511</td>
+			<td>$543.23</td>
+		</tr>
+		<tr>
+			<td>Rachel Bishop</td>
+			<td>Andorra</td>
+			<td>08043</td>
+			<td>$555.45</td>
+		</tr>
+	</tbody>
+</table>
+
+# 10. Cigars by Size
+Select all clients which own **cigars**. Select their last name, average length, and ring range (rounded up to the next biggest integer) of their cigars. Order the results by **average cigar length** (descending).
+
+**Example**
+<table >
+	<tbody>
+		<tr>
+			<td><b>LastName</b></td>
+			<td><b>CiagrLength</b></td>
+			<td><b>CiagrRingRange</b></td>
+		</tr>
+		<tr>
+			<td>Miller</td>
+			<td>20</td>
+			<td>5</td>
+		</tr>
+		<tr>
+			<td>Riley</td>
+			<td>19</td>
+			<td>3</td>
+		</tr>
+		<tr>
+			<td>Ramirez</td>
+			<td>18</td>
+			<td>5</td>
+		</tr>
+		<tr>
+			<td>...</td>
+			<td>...</td>
+			<td>...</td>
+		</tr>
+	</tbody>
+</table>
+
+# 11. Client with Cigars
+Create a user-defined function, named **udf_ClientWithCigars(@name)** that receives a client's first name.
+The function should return the total number of cigars that the client has.
+
+**Example**
+<table >
+	<tbody>
+		<tr>
+			<td><b>Query</b></td>
+		</tr>
+		<tr>
+			<td>SELECT dbo.udf_ClientWithCigars('Betty')</td>
+		</tr>
+		<tr>
+			<td><b>Output</b></td>
+		</tr>
+		<tr>
+			<td>5</td>
+		</tr>
+	</tbody>
+</table>
+
+# 12. Search for Cigar with Specific Taste
+Create a **stored procedure**, named **usp_SearchByTaste(@taste)**, that receives taste type. The procedure must print full information about all cigars with the given tastes: **CigarName, Price, TasteType, BrandName, CigarLength, CigarRingRange**. Add **'$'** at the beginning of the price and **"cm"** at the end of both **CigarLength** and **CigarRingRange**. Order them by **CigarLength** (ascending), and **CigarRingRange** (descending).
+
+**Example**
+<table >
+	<tbody>
+		<tr>
+			<td><b>Query</b></td>
+		</tr>
+		<tr>
+			<td>EXEC usp_SearchByTaste 'Woody'</td>
+		</tr>
+	</tbody>
+</table>
+
+**Output**
+<table >
+	<tbody>
+		<tr>
+			<td><b>CigarName</b></td>
+			<td><b>Price</b></td>
+			<td><b>TasteType</b></td>
+			<td><b>BrandName</b></td>
+			<td><b>CigarLength</b></td>
+			<td><b>CigarRingRange</b></td>
+		</tr>
+		<tr>
+			<td>BOLIVAR PETIT CORONAS</td>
+			<td>$18.76</td>
+			<td>Woody</td>
+			<td>BOLIVAR</td>
+			<td>10 cm</td>
+			<td>2.90 cm</td>
+		</tr>
+		<tr>
+			<td>DAVIDOFF MILLENNIUM BLEND ROBUSTO</td>
+			<td>$86.45</td>
+			<td>Woody</td>
+			<td>DAVIDOFF</td>
+			<td>11 cm</td> 
+			<td>4.30 cm</td>
+		</tr>
+		<tr>
+			<td>...</td>
+			<td>...</td>
+			<td>...</td>
+			<td>...</td>
+			<td>...</td>
+			<td>...</td>
+		</tr>
+	</tbody>
+</table>
