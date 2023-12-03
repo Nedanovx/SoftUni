@@ -45,13 +45,13 @@ NOTE: You need a public class StartUp.
 Create a project Zoo. It needs to contain the following classes:
 ```mermaid
 graph TD;
-Gorilla --> Mammal;
-Bear --> Mammal;
-Lizard --> Reptile;
-Snake --> Reptile;
-Reptile --> Animal;
-Mammal --> Animal;
 Animal;
+Animal --> Mammal;
+Animal --> Reptile;
+Reptile --> Snake;
+Reptile --> Lizard;
+Mammal --> Bear;
+Mammal --> Gorilla;
 ```
 Follow the diagram and create all of the classes. Each of them, except the Animal class, should inherit from another class. Every class should have:
 - A constructor, which accepts one parameter: name.
@@ -64,14 +64,14 @@ Your task is to create the following game hierarchy:
 ```mermaid
 graph TD;
 Hero;
-Elf --> Hero;
-MuseElf --> Elf;
-Wizard --> Hero;
-DarkWizard --> Wizard;
-SoulMaster --> DarkWizard;
-Knight --> Hero;
-DarkKnight --> Knight;
-BladeKnight --> DarkKnight;
+Hero --> Elf;
+Elf --> MuseElf;
+Hero --> Wizard;
+Wizard --> DarkWizard;
+DarkWizard --> SoulMaster;
+Hero --> Knight;
+Knight --> DarkKnight;
+DarkKnight --> BladeKnight;
 ```
 
 Create a class Hero. It should contain the following members:
@@ -100,12 +100,12 @@ NOTE: You need a public class StartUp. Create the following hierarchy with the f
 ```mermaid
 graph TD;
 Vehicle;
-Motorcycle --> Vehicle;
-RaceMotorcycle --> Motorcycle;
-CrossMotorcycle --> Motorcycle;
-Car --> Vehicle;
-SportCar --> Car;
-FamilyCar --> Car;
+Vehicle --> Motorcycle;
+Motorcycle --> RaceMotorcycle;
+Motorcycle --> CrossMotorcycle;
+Vehicle --> Car;
+Car --> SportCar;
+Car --> FamilyCar;
 ```
 Create a base class Vehicle. It should contain the following members:
 - A constructor that accepts the following parameters: int horsePower, double fuel
