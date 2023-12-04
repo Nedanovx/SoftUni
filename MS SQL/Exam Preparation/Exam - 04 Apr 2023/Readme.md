@@ -390,3 +390,256 @@ Select all **invoices**, ordered by **amount** (descending), then by due date (a
 		</tr>
 	</tbody>
 </table>
+
+# 06. Products by Category
+Select all **products** with **"ADR"** or **"Others"** categories. Order results by **Price** (descending).
+
+**Required columns:**
+- Id
+- Name
+- Price
+- CategoryName
+
+**Example**
+<table >
+	<tbody>
+		<tr>
+			<td><b>Id</b></td>
+			<td><b>Name</b></td>
+			<td><b>Price</b></td>
+			<td><b>v</b></td>
+		</tr>
+		<tr>
+			<td>69</td>
+			<td>Steel armor for trailer</td>
+			<td>1350.00</td>
+			<td>Others</td>
+		</tr>
+		<tr>
+			<td>15</td>
+			<td>Air bag for trailer</td>
+			<td>130.06</td>
+			<td>Others</td>
+		</tr>
+		<tr>
+			<td>17</td>
+			<td>Break pads for trailer</td>
+			<td>89.60</td>
+			<td>Others</td>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td>Groupage board-Load limiter</td>
+			<td>79.33</td>
+			<td>ADR</td>
+		</tr>
+		<tr>
+			<td>...</td>
+			<td>...</td>
+			<td>...</td>
+			<td>...</td>
+		</tr>
+	</tbody>
+</table>
+
+# 07. Clients without Products
+Select all clients **without** products. Order them by name (ascending).
+
+**Required columns:**
+- Id
+- Client
+- Address
+
+**Example**
+<table >
+	<tbody>
+		<tr>
+			<td><b>Id</b></td>
+			<td><b>Client</b></td>
+			<td><b>Address</b></td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td>JUAN Y ENRIQUE SANCHEZ GA</td>
+			<td>Carretera de Madrid 240, Albacete, 20080, Spain</td>
+		</tr>
+		<tr>
+			<td>12</td>
+			<td>ROMO BELLIDO SOCIEDAD LIM</td>
+			<td>Carretera 330, Carinena, 50400, Spain</td>
+		</tr>
+	</tbody>
+</table>
+
+# 08. First 7 Invoices
+Select the first **7** invoices that were **issued before 2023-01-01** and have an **EUR** currency or the **amount** of an invoice is **greater** than **500.00** and the **VAT** number **of** the corresponding client starts with **"DE"**. Order the result by **invoice number (ascending)**, then by **amount (descending)**.
+
+**Required columns:**
+- Number
+- Amount
+- Client
+
+**Example**
+<table >
+	<tbody>
+		<tr>
+			<td><b>Number</b></td>
+			<td><b>v</b></td>
+			<td><b>Client</b></td>
+		</tr>
+		<tr>
+			<td>219066487</td>
+			<td>891.76</td>
+			<td>219066487</td>
+		</tr>
+		<tr>
+			<td>320983369</td>
+			<td>704.48</td>
+			<td>BTS GMBH & CO KG</td>
+		</tr>
+		<tr>
+			<td>365934879</td>
+			<td>615.15</td>
+			<td>FAHRZEUGBEDARF KOTZ & CO</td>
+		</tr>
+		<tr>
+			<td>...</td>
+			<td>...</td>
+			<td>...</td>
+		</tr>
+	</tbody>
+</table>
+
+# 09. Clients with VAT
+Select all of the clients that have a name, **not** ending in **"KG"**, and display their most expensive product and their VAT number. Order by product price (descending).
+
+**Required columns:**
+- Client
+- Price
+- VAT Number
+
+**Example**
+<table >
+	<tbody>
+		<tr>
+			<td><b>Client</b></td>
+			<td><b>Price</b></td>
+			<td><b>VAT Number</b></td>
+		</tr>
+		<tr>
+			<td>TALLERES MAVIMA SL</td>
+			<td>1350.00</td>
+			<td>ESB26163097</td>
+		</tr>
+		<tr>
+			<td>DPS EUROPE AB</td>
+			<td>375.00</td>
+			<td>SE556488676901</td>
+		</tr>
+		<tr>
+			<td>B & H TRANSPORT LOGISTIK</td>
+			<td>309.76</td>
+			<td>ATU53998900</td>
+		</tr>
+		<tr>
+			<td>...</td>
+			<td>...</td>
+			<td>...</td>
+		</tr>
+	</tbody>
+</table>
+
+# 10. Clients by Price
+Select all clients, which have bought products. Select their name and average price (rounded down to the nearest integer). Show only the results for clients, whose products are distributed by vendors with **"FR"** in their VAT number. Order the results by **average price (ascending)**, then by client name (descending).
+
+**Example**
+<table >
+	<tbody>
+		<tr>
+			<td><b>Client</b></td>
+			<td><b>Average Price</b></td>
+		</tr>
+		<tr>
+			<td>FRANZ SCHMID GMBH & CO K</td>
+			<td>9</td>
+		</tr>
+		<tr>
+			<td>FRANZ SCHMID GMBH & CO K</td>
+			<td>14</td>
+		</tr>
+		<tr>
+			<td>JOSEF PAUL GMBH & COKG</td>
+			<td>15</td>
+		</tr>
+		<tr>
+			<td>...</td>
+			<td>...</td>
+		</tr>
+	</tbody>
+</table>
+
+# 11. Product with Clients
+Create a user-defined function, named **udf_ProductWithClients(@name)** that receives a product's name.
+The function should return the total number of clients that the product has been sold to.
+
+**Example**
+<table >
+	<tbody>
+		<tr>
+			<td><b>Query</b></td>
+		</tr>
+		<tr>
+			<td>SELECT dbo.udf_ProductWithClients('DAF FILTER HU12103X')</td>
+		</tr>
+		<tr>
+			<td><b>Output</b></td>
+		</tr>
+		<tr>
+			<td>3</td>
+		</tr>
+	</tbody>
+</table>
+
+# 12. Search for Vendors from a Specific Country
+Create a stored procedure, named **usp_SearchByCountry(@country)** that receives a country name. The procedure must print full information about all vendors that have an address in the given country: **Name, NumberVAT, Street Name and Number (concatenated), PostCode and City (concatenated). Order them by Name (ascending) and City (ascending)**.
+
+**Example**
+<table >
+	<tbody>
+		<tr>
+			<td><b>Query</b></td>
+		</tr>
+		<tr>
+			<td>EXEC usp_SearchByCountry 'France'</td>
+		</tr>
+	</tbody>
+</table>
+
+<table >
+	<tbody>
+		<tr>
+			<td><b>Vendor</b></td>
+			<td><b>VAT</b></td>
+			<td><b>Street Info</b></td>
+			<td><b>City Info</b></td>
+		</tr>
+		<tr>
+			<td>LE RELAIS DES PRIMEURS</td>
+			<td>FR64431553163</td>
+			<td>Rue de la Gare 17</td>
+			<td>Taule 29670</td>
+		</tr>
+		<tr>
+			<td>SARL HEBERGECO</td>
+			<td>FR75532664075</td>
+			<td>Route de Orleans 37</td>
+			<td>Evreux 27000</td>
+		</tr>
+		<tr>
+			<td>...</td>
+			<td>...</td>
+			<td>...</td>
+			<td>...</td>
+		</tr>
+	</tbody>
+</table>
