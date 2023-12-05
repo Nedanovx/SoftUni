@@ -1,4 +1,4 @@
-# Problem Fancy Barcodes
+# Problem - Fancy Barcodes
 
 Your first task is to determine if the given sequence of characters is a valid barcode or not. 
 
