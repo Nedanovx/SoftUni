@@ -1,4 +1,4 @@
-Problem - Emoji Detector
+# Problem - Emoji Detector
 
 Your task is to write a program that extracts emojis from a text and find the threshold based on the input.
 You have to get your cool threshold. It is obtained by multiplying all the digits found in the input.  The cool threshold could be a huge number, so be mindful.
