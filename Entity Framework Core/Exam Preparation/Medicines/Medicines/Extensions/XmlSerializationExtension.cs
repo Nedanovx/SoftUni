@@ -1,81 +1,47 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml;
 using System.Xml.Serialization;
 
 namespace Invoices.Extensions
 {
-    public  class XmlSerializationExtension
+    public static class XmlSerializationExtension
     {
-        public static string SerializeToXml<T>(T obj, string rootName, bool omitXmlDeclaration = false)
+        public static string SerializeToXml<T>(this T obj, string rootName)
         {
-            if (obj == null)
-                throw new ArgumentNullException(nameof(obj), "Object to serialize cannot be null.");
+            XmlRootAttribute root = new XmlRootAttribute(rootName);
+            var xmlSerializer = new XmlSerializer(typeof(T), root);
 
-            if (string.IsNullOrEmpty(rootName))
-                throw new ArgumentNullException(nameof(rootName), "Root name cannot be null or empty.");
+            var namespaces = new XmlSerializerNamespaces();
 
-            try
+            namespaces.Add(string.Empty, string.Empty);
+
+            string result = null;
+
+            using(MemoryStream ms = new MemoryStream())
             {
-                XmlRootAttribute xmlRoot = new(rootName);
-                XmlSerializer xmlSerializer = new(typeof(T), xmlRoot);
+                xmlSerializer.Serialize(ms, obj, namespaces);
 
-                XmlSerializerNamespaces namespaces = new();
-                namespaces.Add(string.Empty, string.Empty);
-
-                XmlWriterSettings settings = new()
-                {
-                    OmitXmlDeclaration = omitXmlDeclaration,
-                    Indent = true,
-                    IndentChars = "\t",
-                    NewLineChars = "\n",
-                    NewLineHandling = NewLineHandling.Replace
-                };
-
-                StringBuilder sb = new();
-                using var stringWriter = new StringWriter(sb);
-                using var xmlWriter = XmlWriter.Create(stringWriter, settings);
-
-                xmlSerializer.Serialize(xmlWriter, obj, namespaces);
-                return sb.ToString().TrimEnd();
+                result = Encoding.UTF8.GetString(ms.ToArray());
             }
-            catch (InvalidOperationException ex)
-            {
-                Debug.WriteLine($"Serialization error: {ex.Message}");
-                throw new InvalidOperationException($"Serializing {typeof(T)} failed.", ex);
-            }
+
+            return result;
         }
 
-        public static T DeserializeToXml<T>(string inputXml, string rootName)
+        public static T DeserializeFromXml<T>(this string xmlString, string rootName)
         {
-            if (string.IsNullOrEmpty(inputXml))
-                throw new ArgumentException("Input XML cannot be null or empty.", nameof(inputXml));
+            XmlRootAttribute root =  new XmlRootAttribute(rootName);
+            var xmlSerializer = new XmlSerializer(typeof(T), root);
 
-            if (string.IsNullOrEmpty(rootName))
-                throw new ArgumentException("Root name cannot be null or empty.", nameof(rootName));
+            T result = default(T);
 
-            try
+            using (MemoryStream ms = new MemoryStream(Encoding.UTF8.GetBytes(xmlString)))
             {
-                XmlRootAttribute xmlRoot = new(rootName);
-                XmlSerializer xmlSerializer = new(typeof(T), xmlRoot);
-
-                using var reader = new StringReader(inputXml);
-                return (T)xmlSerializer.Deserialize(reader);
+                result = (T) xmlSerializer.Deserialize(ms);
             }
-            catch (XmlException ex)
-            {
-                Debug.WriteLine(ex);
-                throw new InvalidOperationException("XML deserialization failed.", ex);
-            }
-            catch (InvalidOperationException ex)
-            {
-                Debug.WriteLine(ex);
-                throw new InvalidOperationException($"{typeof(T)} deserialization failed.", ex);
-            }
+            return result;
         }
     }
 }
