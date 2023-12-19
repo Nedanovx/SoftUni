@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34221.43
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Television", "Television\Television.csproj", "{E53C0776-DFC5-4043-902E-7FF03F7A2A61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Television.Tests", "Television.Tests\Television.Tests.csproj", "{9199B0B5-2CAB-4961-B8CB-EDF8B052ABBB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E53C0776-DFC5-4043-902E-7FF03F7A2A61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E53C0776-DFC5-4043-902E-7FF03F7A2A61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E53C0776-DFC5-4043-902E-7FF03F7A2A61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E53C0776-DFC5-4043-902E-7FF03F7A2A61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9199B0B5-2CAB-4961-B8CB-EDF8B052ABBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9199B0B5-2CAB-4961-B8CB-EDF8B052ABBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9199B0B5-2CAB-4961-B8CB-EDF8B052ABBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9199B0B5-2CAB-4961-B8CB-EDF8B052ABBB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {924F03FD-105C-4200-9AE0-C714827D7BCE}
+	EndGlobalSection
+EndGlobal
