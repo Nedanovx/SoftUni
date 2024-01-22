@@ -1,0 +1,19 @@
+﻿@using MVC_Demo.Models.Product;
+@model IEnumerable<ProductViewModel>;
+
+@{
+	ViewData["Title"] = "All Product";
+}
+<div class="card" style="width: 18rem">
+	<div class="card-header text-black">
+		@ViewData["Title"]
+	</div>
+	<ul class="list-group list-group-flush">
+			@foreach (ProductViewModel product in Model)
+	{
+		<li class="list-group-item">
+				<a class="text-decoration-none text-black" asp-controller="Product" asp-action="ById" asp-route-id="@product.Id">@product.Name @product.Price lv.</a>
+			</li>
+	}
+	</ul> 
+</div>
