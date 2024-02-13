@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 using System.Security.Claims;
 using TaskBoardApp.Data;
@@ -15,11 +16,11 @@ namespace TaskBoardApp.Controllers
             data = context;
         }
 
-        public  IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var taskBoards = data.Boards
+            var taskBoards = await data.Boards
                  .Select(b => b.Name)
-                 .Distinct().ToList();
+                 .Distinct().ToListAsync();
 
             var tasksCounts = new List<HomeBoardModel>();
 
