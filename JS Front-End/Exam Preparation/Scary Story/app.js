@@ -1,121 +1,114 @@
-window.addEventListener("load", solve)
+window.addEventListener("load", solve);
 
-function solve() {
-  const storyState = {
-    firstName: null,
-    lastName: null,
-    age: null,
-    title: null,
-    genre: null,
-    story: null,
-  }
-  const inputDomSelector = {
-    firstName: document.getElementById('first-name'),
-    lastName: document.getElementById('last-name'),
-    age: document.getElementById('age'),
-    title: document.getElementById('story-title'),
-    genre: document.getElementById('genre'),
-    story: document.getElementById('story'),
-  }
-
-  const otherDOMSelector = {
-    publishBtn: document.getElementById('form-btn'),
-    previewList: document.getElementById('preview-list'),
-    mainContainer: document.getElementById('main'),
-  }
-
-  otherDOMSelector.publishBtn.addEventListener('click', publishStoryHandler);
-
-  function publishStoryHandler(){
-    const allFieldsHaveValues = Object.values(inputDomSelector)
-    .every((input) => input.value !== '');
-
-    if(!allFieldsHaveValues){
-      return;
+function solve(){
+    const inputState ={
+        place: null,
+        action: null,
+        person: null,
     }
-    const {firstName, lastName, age, title, genre, story} = inputDomSelector;
-    const li = createElement('li', otherDOMSelector.previewList, null, ['story-info']);
-    const article = createElement('article', li);
-    createElement('h4', article, `Name: ${firstName.value} ${lastName.value}`);
-    createElement('p', article, `Age: ${age.value}`);
-    createElement('p', article, `Title: ${title.value}`);
-    createElement('p', article, `Genre: ${genre.value}`);
-    createElement('p', article, story.value);
-    const saveBtn = createElement('button', li, 'Save Story', ['save-btn']);
-    const editBtn = createElement('button', li, 'Edit Story', ['edit-btn']);
-    const deleteBtn = createElement('button', li, 'Delete Story', ['delete-btn']);
 
-    editBtn.addEventListener('click', editStoryHandler);
-    saveBtn.addEventListener('click', saveStoryHandler);
-    deleteBtn.addEventListener('click', deleteStoryHandler);
+    const inputDomSelector ={
+        place: document.getElementById('place'),
+        action: document.getElementById('action'),
+        person: document.getElementById('person'),
+    }
 
-    for(const key in inputDomSelector) {
-      storyState[key] = inputDomSelector[key].value;
-      }
+    const otherDomSelector ={
+        addButton: document.getElementById('add-btn'),
+        taskList: document.getElementById('task-list'),
+        doneTask: document.getElementById('done-list'),
+    }
+    otherDomSelector.addButton.addEventListener('click', addhandlerTask);
 
-    Object.values(inputDomSelector)
+    function addhandlerTask(){
+        const allFieldsHasValue = Object.values(inputDomSelector)
+        .every((input) => input.value !== '');
+
+        if(!allFieldsHasValue){
+            return;
+        }
+        const {place, action, person} = inputDomSelector;
+        const li = createElement('li', otherDomSelector.taskList, null, ['clean-task']);
+        const articleElement = createElement('article', li);
+        createElement('p',articleElement,`Place:${place.value}`);
+        createElement('p', articleElement, `Action:${action.value}`);
+        createElement('p', articleElement, `Person:${person.value}`);
+        const divContainer = createElement('div', li, null,[`buttons`]);
+        const editBtn = createElement('button', divContainer, 'Edit', ['edit']);
+        const doneBtn = createElement('button', divContainer, 'Done', ['done']);
+
+        editBtn.addEventListener('click', editTaskHandler);
+        doneBtn.addEventListener('click', doneTaskHandler);
+        for(const key in inputDomSelector){
+            inputState[key] = inputDomSelector[key].value;
+        }
+
+        Object.values(inputDomSelector)
     .forEach((input) => {
       input.value = '';
     })
-
-    otherDOMSelector.publishBtn.disabled = true;
-  }
-
-  function deleteStoryHandler(){
-    const liItem = this.parentNode;
-    liItem.remove();
-    otherDOMSelector.publishBtn.disabled = false;
-  }
-
-    function saveStoryHandler(){
-      otherDOMSelector.mainContainer.innerHTML = '';
-      createElement('h1', otherDOMSelector.mainContainer, 'Your scary story is saved!');
     }
 
-  function editStoryHandler(){
-    for (const key in inputDomSelector) {
-      inputDomSelector[key].value = storyState[key];
+    function editTaskHandler(event){
+        const task = event.target.parentNode.parentNode;
+        for(const key in inputDomSelector){
+            inputDomSelector[key].value = inputState[key];
+        }
+        task.remove();
+
+    }
+
+    function doneTaskHandler(event){
+        const doneTask = event.target.parentNode;
+        const doneTaskParent = doneTask.parentNode;
+        const {place, action, person} = inputState;
+        const li = createElement('li', otherDomSelector.doneTask, null, ['done-list']);
+        const articleElement = createElement('article', li);
+        createElement('p',articleElement,`Place:${place.value}`);
+        createElement('p', articleElement, `Action:${action.value}`);
+        createElement('p', articleElement, `Person:${person.value}`);
+        const deleteBtn = createElement('button', li, 'Delete', ['delete']);
+        deleteBtn.addEventListener('click', deleteTaskHandler);
+        doneTaskParent.remove();
+    }
+    function deleteTaskHandler(event){
+        const deleteTask = event.target.parentNode;
+        
+        deleteTask.remove();
+
+    }
+    function createElement(type, parentNode, content, classes, id, attributes, useInnerHtml){
+        const htmlElement = document.createElement(type);
+        
+        if(content && useInnerHtml){
+          htmlElement.innerHTML = content;
+        }else{
+          if(content && type !== 'input'){
+            htmlElement.textContent = content;
+          }
+      
+          if(content && type === 'input'){
+            htmlElement.value = content;
+          }
+        }
+      
+        if(classes && classes.length > 0){
+          htmlElement.classList.add(...classes);
+        }
+      
+        if(id){
+          htmlElement.id = id;
+        }
+      
+        if(attributes){
+          for(const key in attributes){
+            htmlElement.setAttribute(key, attributes[key]);
+          }
+        }
+      
+        if(parentNode){
+          parentNode.appendChild(htmlElement);
+        }
+        return htmlElement;
       }
-
-      otherDOMSelector.publishBtn.disabled = false;
-      otherDOMSelector.previewList.innerHTML = '';
-      createElement('h3', otherDOMSelector.previewList, 'Preview');
-    }
-  
-  function createElement(type, parentNode, content, classes, id, attributes, useInnerHtml){
-    const htmlElement = document.createElement(type);
-    
-    if(content && useInnerHtml){
-      htmlElement.innerHTML = content;
-    }else{
-      if(content && type !== 'input'){
-        htmlElement.textContent = content;
-      }
-  
-      if(content && type === 'input'){
-        htmlElement.value = content;
-      }
-    }
-  
-    if(classes && classes.length > 0){
-      htmlElement.classList.add(...classes);
-    }
-  
-    if(id){
-      htmlElement.id = id;
-    }
-  
-    if(attributes){
-      for(const key in attributes){
-        htmlElement.setAttribute(key, attributes[key]);
-      }
-    }
-  
-    if(parentNode){
-      parentNode.appendChild(htmlElement);
-    }
-    return htmlElement;
-  }
 }
-
-
